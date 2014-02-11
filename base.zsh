@@ -1,5 +1,4 @@
 # aliases
-alias chrome='open -a Google\ Chrome --args --disable-web-security'
 alias desk='cd ~/Desktop'
 alias dev='cd ~/Development'
 alias diff='colordiff'
