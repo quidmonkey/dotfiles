@@ -3,7 +3,7 @@
 
 alias batman="node -e 'console.log(Array(16).join(\"wat\" - 1).toLowerCase() + \"Batman!\")' | xargs say -v alex"
 alias chrome='open -a Google\ Chrome --args --disable-web-security'
-alias lestweforget="yes dawn | xargs says -v badnews"
+alias lestweforget="yes 'dawn' | xargs say -v 'Bad News'"
 
 # get wireless ip
 alias wip=get_wifi_ip
