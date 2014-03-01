@@ -2,13 +2,12 @@
 alias desk='cd ~/Desktop'
 alias dev='cd ~/Development'
 alias diff='colordiff'
-alias dotfiles='subl ~/.zshconfig'
-alias e='~/subl'
+alias dotfiles='e ~/.zshconfig'
+# alias e='subl'
 alias hosts='e /etc/hosts'
-alias ohmyzsh="subl ~/.oh-my-zsh"
+alias ohmyzsh="e ~/.oh-my-zsh"
 alias reload='~/.zshrc'
-alias subl='~/subl'
-alias zshconfig="subl ~/.zshrc"
+alias zshconfig="e ~/.zshrc"
 
 # post to an endpoint via curl
 # takes two args
