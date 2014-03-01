@@ -31,6 +31,14 @@ make_mine () {
     sudo chown -R $(whoami) $1
 }
 
+# takes two args
+# first is the command to make global
+# second is the alias for the command
+alias addcmd=make_cmd_global
+make_cmd_global () {
+    sudo ln -s $(which $1) /usr/local/bin/$2
+}
+
 # make it easy to search for a running process
 alias psg=ps_grep
 ps_grep () {
