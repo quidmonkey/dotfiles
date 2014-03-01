@@ -8,13 +8,14 @@ alias rebaseDev="git checkout develop && git pull --rebase && git checkout - && 
 alias stbmwb="ssh -o StrictHostKeyChecking=no -C root@172.24.200.82 'cd /mnt/nfs/mwb ; /bin/sh'"
 alias touchdusts='find ~/.dawn/src/templates/dusts/ -type f | xargs touch'
 alias touchsass="echo '#fakeidToTriggerSassRecompile{color:red}' >> ~/.dawn/src/styles/sass/_default.scss && sleep 3 && sed -i '/#fakeidToTriggerSassRecompile{color:red}/d' ~/.dawn/src/styles/sass/_default.scss"
-alias totallines="find . -type f -iname '*.js' -exec cat {} \; | wc"
 
+# takes jira ticket #
 alias tstb=TSTB
 function TSTB () {
     open "https://jira.epam.com/jira/browse/TSTB-$1"
 }
 
+# takes commit sha
 alias gitlab=TSTBG
 function TSTBG () {
     open "https://git.epam.com/libg-106/commit/$1"

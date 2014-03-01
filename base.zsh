@@ -2,19 +2,34 @@
 alias desk='cd ~/Desktop'
 alias dev='cd ~/Development'
 alias diff='colordiff'
+alias dotfiles='subl ~/.zshconfig'
 alias e='~/subl'
 alias hosts='e /etc/hosts'
-alias impact="cd ~/Development/impact"
 alias ohmyzsh="subl ~/.oh-my-zsh"
 alias reload='~/.zshrc'
-alias starninja="cd ~/Development/impact/starninja"
 alias subl='~/subl'
 alias zshconfig="subl ~/.zshrc"
+
+# post to an endpoint via curl
+# takes two args
+# first: data in the form of "param1=value1&param2=value2"
+# second: the url
+alias cpd=curl_post_data
+curl_post_data () {
+    curl --data $1 $2
+}
 
 # ddos - run in background!
 alias ddos=curl_site_indefinitely
 curl_site_indefinitely () {
     while [ 1 == 1 ]; do curl $1; sleep 5; done
+}
+
+# change ownership of a directory to myself
+# takes directory
+alias mine=make_mine
+make_mine () {
+    sudo chown -R $(whoami) $1
 }
 
 # make it easy to search for a running process
@@ -26,16 +41,12 @@ ps_grep () {
 # make it easy to kill a process
 alias psk=ps_kill
 ps_kill () {
-    kill -9 $(ps aux | grep $1 | awk '{print $2;}')
+    kill -15 $(ps aux | grep $1 | awk '{print $2;}')
 }
 
-alias pyserve=python_server
-python_server () {
-    python -m SimpleHTTPServer $1
-}
-
-# get wireless ip
-alias wip=get_wifi_ip
-function get_wifi_ip {
-    /sbin/ifconfig en1 | grep 'inet ' | awk '{ print $2 }'
+# takes url
+# find out when a server goes live
+alias whenshesup=is_she_up
+is_she_up () {
+    while ! curl -Is $1 > /dev/null ; do sleep 1 ; done ; echo She\'s Up
 }
