@@ -1,7 +1,5 @@
 # osx only
-# ! command -v sw_ver > /dev/null 2>&1 || exit 1
-# ! $(command -v sw_ver) || return
-if [ ! $(command -v sw_ver) ]; then return; fi
+if [ ! $(command -v sw_vers) ]; then return; fi
 
 alias batman="node -e 'console.log(Array(16).join(\"wat\" - 1).toLowerCase() + \"Batman!\")' | xargs say -v alex"
 alias chrome='open -a Google\ Chrome --args --disable-web-security'

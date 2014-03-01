@@ -1,6 +1,4 @@
-# ubuntu only - non-osx
-# command -v lsb_release > /dev/null 2>&1 || exit 1
-
+# ubuntu only
 if [ ! $(command -v lsb_release) ]; then return; fi
 
 # add android adb platform tools
