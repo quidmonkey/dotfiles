@@ -8,4 +8,6 @@ CONFIG=~/.zshconfig
 for f in $(find $CONFIG -type f -name '*.zsh'); do source $f; done;
 ```
 
-This will bootstrap in all my dotfiles. You can do something similar in your .bashrc or .profile if you're using bash.
+This will load all my dotfiles. You can do something similar in your .bashrc or .profile if you're using bash.
+
+I sync my dotfiles between OSX and Ubuntu, thus I have system-specific configs in the osx.zsh and ubuntu.zsh files respectively.

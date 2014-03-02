@@ -32,7 +32,7 @@ make_mine () {
 }
 
 # takes two args
-# first is the command to make global
+# first is the (path to the) command to make global
 # second is the alias for the command
 alias addcmd=make_cmd_global
 make_cmd_global () {
