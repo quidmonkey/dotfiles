@@ -14,20 +14,22 @@ trash () {                                  # Moves a file to the MacOS trash
 # alias subl='/Applications/Sublime\ Text.app/Contents/SharedSupport/bin/subl'
 
 # android
-export PATH="$PATH:/Users/Abe.Walters/Development/adt-bundle-mac-x86_64-20140321/sdk"
-export ANDROID_HOME="/Users/Abe.Walters/Development/adt-bundle-mac-x86_64-20140321/sdk"
+# export PATH="$PATH:/Users/Abe.Walters/Development/adt-bundle-mac-x86_64-20140321/sdk"
+# export ANDROID_HOME="/Users/Abe.Walters/Development/adt-bundle-mac-x86_64-20140321/sdk"
 
-# rvm
-export PATH=$PATH:$HOME/.rvm/bin
+# rbenv
+eval "$(rbenv init -)"
 
-# load rvm
-source ~/.rvm/scripts/rvm
+# pyenv
+eval "$(pyenv init -)"
+export PYENV_ROOT=$(brew --prefix)/var/pyenv
+# #To enable auto-activation add to your profile:
+# if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
 
-# ruby
-PATH=$PATH:/usr/bin/ruby
+# jenv
+export PATH="$HOME/.jenv/bin:$PATH"
+eval "$(jenv init -)"
 
-# add npm
-export PATH="$PATH:/usr/local/share/npm/bin"
 
 # get wireless ip
 alias wip=get_wifi_ip
@@ -42,37 +44,10 @@ alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall F
 # renew ip
 alias renewip='sudo ipconfig set en0 BOOTP; sudo ipconfig set en0 DHCP'
 
-# mavericks flush dns
-# alias flushdns='sudo killall -HUP mDNSResponder'
-
-# yosemite flush dns
-alias flushdns='sudo discoveryutil mdnsflushcache'
-
-# pyenv
-eval "$(pyenv init -)"
-export PYENV_ROOT=$(brew --prefix)/var/pyenv
-# #To enable auto-activation add to your profile:
-# if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
-
-# nvm
-# [ ! -d $HOME/.nvm ] && mkdir $HOME/.nvm
-# export NVM_DIR=$HOME/.nvm
-# source $(brew --prefix nvm)/nvm.sh
-
-# rvm
-export PATH="$PATH:$HOME/.rvm/bin"
-
 # because life is so much better with it
-eval "$(thefuck --alias)"
-alias jesus=fuck
-
-# node
-alias npml='npm list -g --depth=0'
-
-# jenv
-# export PATH="$HOME/.jenv/bin:$PATH"
-# eval "$(jenv init -)"
+# eval "$(thefuck --alias)"
+# alias jesus=fuck
 
 # go
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export GOPATH=/usr/local/opt/go/libexec
+# export PATH=$PATH:/usr/local/opt/go/libexec/bin
+# export GOPATH=/usr/local/opt/go/libexec

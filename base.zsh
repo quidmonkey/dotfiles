@@ -10,7 +10,7 @@ alias clients="cd ~/Development/clients"
 alias desk='cd ~/Desktop'
 alias dev='cd ~/Development'
 alias diff='colordiff'
-alias dotfiles='e ~/.zshconfig'
+alias dotfiles='e ~/.dotfiles'
 alias e='atom'
 alias hosts='e /etc/hosts'
 alias ohmyzsh="e ~/.oh-my-zsh"
@@ -19,7 +19,7 @@ alias research='cd ~/Development/research'
 alias shrug='echo -n "¯\_(ツ)_/¯" | pbcopy'
 alias shrugl='echo -n "¯\_(ツ)¯\_" | pbcopy'
 alias shrugr='echo -n "_/¯(ツ)_/¯" | pbcopy'
-alias zshconfig="e ~/.zshrc"
+alias zshrc="e ~/.zshrc"
 
 # change ownership of a directory to myself
 # takes directory
