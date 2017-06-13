@@ -9,10 +9,17 @@ get_git_owner_repo () {
 }
 
 # get the github base url of host + owner/repo slug
+# get_github_base_url () {
+#     local host=$(get_github_host)
+#     local owner_repo=$(get_git_owner_repo)
+#     echo $host$owner_repo
+# }
 get_github_base_url () {
-    local host=$(get_github_host)
-    local owner_repo=$(get_git_owner_repo)
-    echo $host$owner_repo
+    local repo=$(git config --get remote.origin.url)
+    repo="${repo/://}"
+    repo="${repo/git\@/http://}"
+    repo="${repo/.git/}"
+    echo $repo
 }
 
 # get the current git branch
@@ -21,11 +28,14 @@ get_git_branch () {
 }
 
 # takes the target file to blame on github
+# takes an optional branch parameter for targeting a specific branch
+# defaults to the current branch
 # example: ghblame path/to/file
+# example: ghblame path/to/file master (on dev branch)
 alias ghblame=github_blame
 github_blame () {
     local base_url=$(get_github_base_url)
-    local branch=$(get_git_branch)
+    local branch=${2:-$(get_git_branch)}
     open $base_url/blame/$branch/$1
 }
 
@@ -40,9 +50,11 @@ github_commit () {
 }
 
 # diff the current branch against dev on github
+# takes an optional branch parameter for targeting a specific branch
+# defaults to the current branch
 alias ghdiff=github_diff
 github_diff () {
     local base_url=$(get_github_base_url)
-    local branch=$(get_git_branch)
+    local branch=${1:-$(get_git_branch)}
     open $base_url/compare/dev...$branch
 }
